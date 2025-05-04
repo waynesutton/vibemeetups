@@ -1,0 +1,420 @@
+:root {
+  /* Modern Color Palette */
+  --primary: #c96342; /* Warm Terracotta */
+  --primary-dark: #b15237;
+  --primary-light: #e17355;
+  --secondary: #4a5568; /* Slate Gray */
+  --accent: #48bb78; /* Green */
+  --background: #faf9f5; /* Off-white */
+  --background-gradient: linear-gradient(135deg, #faf9f5 0%, #f4e8e0 100%);
+  --dark: #2d3748; /* Dark Slate */
+  --gray: #718096; /* Medium Gray */
+  --light-gray: #edf2f7; /* Light Gray */
+  --white: #ffffff;
+
+  /* Glassmorphism effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(201, 99, 66, 0.1);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 400;
+}
+
+/* Global Link Styles */
+a {
+  color: var(--primary);
+  text-decoration: none; /* Remove underlines by default */
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-dark); /* Slightly darker on hover */
+}
+
+/* Background gradient */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: var(--background-gradient);
+  z-index: -2;
+}
+
+/* Animated gradient orbs */
+.gradient-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  z-index: -1;
+  animation: float 10s ease-in-out infinite;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: var(--primary);
+  top: -100px;
+  left: -100px;
+}
+
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: var(--accent);
+  bottom: -100px;
+  right: -100px;
+  animation-delay: -5s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: var(--secondary);
+  top: 50%;
+  left: 50%;
+  animation-delay: -2.5s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, 20px);
+  }
+}
+
+/* Header Container */
+.app-header {
+  position: fixed; /* Keep header fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space out title and links */
+  align-items: center;
+  padding: 1rem 2rem; /* Consistent padding */
+  z-index: 100;
+  pointer-events: none; /* Allow clicks to pass through container */
+}
+
+.header-title a {
+  text-decoration: none;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  pointer-events: auto; /* Enable clicks on title */
+}
+
+.header-title a:hover {
+  color: var(--primary);
+}
+
+/* Top Links (Header Component) */
+.top-links {
+  /* position: fixed; */ /* Position now handled by app-header */
+  /* top: 1rem; */
+  /* right: 2rem; */
+  display: flex;
+  gap: 2rem;
+  /* z-index: 100; */
+  pointer-events: auto; /* Enable clicks on links */
+}
+
+.top-links a {
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+  /* min-height: 100vh; */ /* Removed fixed viewport height */
+  padding-top: 6rem; /* Adjust top padding to account for fixed header */
+  padding-bottom: 4rem; /* Reduce bottom padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.secondary-button {
+  background: transparent;
+  color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* Dashboard Preview (Meetups Component) */
+.meetups-section {
+  /* Renamed from .dashboard-preview */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+.meetups-container {
+  /* Renamed from .dashboard-container */
+  background: var(--white);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  /* box-shadow: var(--shadow); */
+}
+
+.meetups-header {
+  /* Renamed from .dashboard-header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.meetups-title {
+  /* Renamed from .dashboard-title */
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--dark);
+}
+
+/* Removed .dashboard-stats and .stat-card styles as they are not used */
+
+/* --- New Meetup List Styles --- */
+.meetups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between meetup items */
+}
+
+.meetup-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align button to top */
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--light-gray); /* Separator line */
+}
+
+.meetup-item:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+.meetup-content {
+  flex-grow: 1;
+  margin-right: 1.5rem; /* Space between content and button */
+}
+
+.meetup-top-line {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  color: var(--dark); /* Color for title/date line */
+  font-size: 1rem;
+}
+
+.meetup-icon {
+  margin-right: 0.75rem;
+  font-size: 0.9rem; /* Adjust icon size */
+  color: var(--gray); /* Icon color */
+}
+
+.meetup-title-date {
+  font-weight: 500; /* Slightly bolder title/date */
+}
+
+.meetup-description {
+  color: var(--gray); /* Description color */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.meetup-location {
+  /* Style for the location text */
+  color: var(--secondary); /* Use secondary color */
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.meetup-view-button {
+  background-color: var(--dark); /* Dark background like image */
+  color: var(--light-gray); /* Light text */
+  padding: 0.4rem 1.2rem;
+  border-radius: 16px; /* Rounded corners */
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent button text wrapping */
+  transition: background-color 0.3s ease;
+}
+
+.meetup-view-button:hover {
+  background-color: var(--gray); /* Slightly lighter on hover */
+  color: var(--white);
+}
+
+/* Partners Section */
+.partners {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+.partners-title {
+  /* Added title style */
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--dark);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.partner-card {
+  background: var(--white);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  /* box-shadow: var(--shadow); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+
+.partner-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+}
+
+.partner-logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+
+/* About Section */
+.about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+.about-container {
+  background: var(--white);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  padding: 2rem;
+  /* box-shadow: var(--shadow); */
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 1rem;
+}
+
+.about p {
+  color: var(--gray);
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Footer */
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 2rem 2rem;
+  text-align: center;
+  color: var(--gray);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  /* .nav-links adjustment handled in Header component if needed */
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .meetups-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
