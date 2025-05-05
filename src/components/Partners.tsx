@@ -5,9 +5,15 @@ const Partners: React.FC = () => {
     <section className="partners" id="partners">
       <h2 className="partners-title">Partners</h2>
       <div className="partners-grid">
-        <div className="partner-card">
-          <div className="partner-logo">Partner 1</div>
-        </div>
+        <a
+          href="https://convex.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="partner-link">
+          <div className="partner-card">
+            <img src="/convex-black.svg" alt="Convex Logo" className="partner-image" />
+          </div>
+        </a>
         <div className="partner-card">
           <div className="partner-logo">Partner 2</div>
         </div>

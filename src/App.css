@@ -230,7 +230,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem; /* Reduced margin */
 }
 
 .meetups-title {
@@ -246,14 +246,14 @@ a:hover {
 .meetups-list {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Space between meetup items */
+  gap: 1rem; /* Reduced gap */
 }
 
 .meetup-item {
   display: flex;
   justify-content: space-between;
   align-items: flex-start; /* Align button to top */
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem; /* Reduced padding */
   border-bottom: 1px solid var(--light-gray); /* Separator line */
 }
 
@@ -288,13 +288,6 @@ a:hover {
   color: var(--gray); /* Description color */
   font-size: 0.95rem;
   line-height: 1.5;
-}
-
-.meetup-location {
-  /* Style for the location text */
-  color: var(--secondary); /* Use secondary color */
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
 }
 
 .meetup-view-button {
@@ -360,6 +353,19 @@ a:hover {
   color: var(--gray);
 }
 
+/* Styling for the image inside the partner card */
+.partner-image {
+  max-height: 60px; /* Adjust max height as needed */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Ensure the link wrapping the card doesn't add extra styling */
+.partner-link {
+  text-decoration: none;
+  color: inherit; /* Inherit color from parent */
+}
+
 /* About Section */
 .about {
   max-width: 1200px;
@@ -378,7 +384,7 @@ a:hover {
 
 .about h2 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--dark);
   margin-bottom: 1rem;
 }

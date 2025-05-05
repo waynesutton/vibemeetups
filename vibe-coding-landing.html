@@ -1,462 +1,505 @@
-        /* About Section */
-        .about {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
-
-        .about-container {
-            background: var(--white);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .about p {
-            color: var(--gray);
-            font-size: 1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Footer */
-        footer {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem 2rem;
-            text-align: center;
-            color: var(--gray);
-        }<!DOCTYPE html>
+/* About Section */ .about { max-width: 1200px; margin: 0 auto; padding: 2rem 2rem; }
+.about-container { background: var(--white); border: 1px solid var(--glass-border); border-radius:
+16px; padding: 2rem; box-shadow: var(--shadow); text-align: center; } .about h2 { font-size: 1.5rem;
+font-weight: 400; color: var(--dark); margin-bottom: 1rem; } .about p { color: var(--gray);
+font-size: 1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; } /* Footer */ footer {
+max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 2rem; text-align: center; color: var(--gray);
+}<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vibe Coding - Code with Flow</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
     <style>
-        :root {
-            /* Modern Color Palette */
-            --primary: #C96342;      /* Warm Terracotta */
-            --primary-dark: #B15237;
-            --primary-light: #E17355;
-            --secondary: #4A5568;    /* Slate Gray */
-            --accent: #48BB78;       /* Green */
-            --background: #FAF9F5;   /* Off-white */
-            --background-gradient: linear-gradient(135deg, #FAF9F5 0%, #F4E8E0 100%);
-            --dark: #2D3748;         /* Dark Slate */
-            --gray: #718096;         /* Medium Gray */
-            --light-gray: #EDF2F7;   /* Light Gray */
-            --white: #FFFFFF;
-            
-            /* Glassmorphism effects */
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(201, 99, 66, 0.1);
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
+      :root {
+        /* Modern Color Palette */
+        --primary: #c96342; /* Warm Terracotta */
+        --primary-dark: #b15237;
+        --primary-light: #e17355;
+        --secondary: #4a5568; /* Slate Gray */
+        --accent: #48bb78; /* Green */
+        --background: #faf9f5; /* Off-white */
+        --background-gradient: linear-gradient(135deg, #faf9f5 0%, #f4e8e0 100%);
+        --dark: #2d3748; /* Dark Slate */
+        --gray: #718096; /* Medium Gray */
+        --light-gray: #edf2f7; /* Light Gray */
+        --white: #ffffff;
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        /* Glassmorphism effects */
+        --glass-bg: rgba(255, 255, 255, 0.7);
+        --glass-border: rgba(201, 99, 66, 0.1);
+        --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--background);
-            color: var(--dark);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        /* Headings */
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 400;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--background);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-        /* Background gradient */
-        .background {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: var(--background-gradient);
-            z-index: -2;
-        }
+      /* Headings */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 400;
+      }
 
-        /* Animated gradient orbs */
-        .gradient-orb {
-            position: fixed;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.15;
-            z-index: -1;
-            animation: float 10s ease-in-out infinite;
-        }
+      /* Background gradient */
+      .background {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: var(--background-gradient);
+        z-index: -2;
+      }
 
-        .orb-1 {
-            width: 400px;
-            height: 400px;
-            background: var(--primary);
-            top: -100px;
-            left: -100px;
-        }
+      /* Animated gradient orbs */
+      .gradient-orb {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.15;
+        z-index: -1;
+        animation: float 10s ease-in-out infinite;
+      }
 
-        .orb-2 {
-            width: 300px;
-            height: 300px;
-            background: var(--accent);
-            bottom: -100px;
-            right: -100px;
-            animation-delay: -5s;
-        }
+      .orb-1 {
+        width: 400px;
+        height: 400px;
+        background: var(--primary);
+        top: -100px;
+        left: -100px;
+      }
 
-        .orb-3 {
-            width: 250px;
-            height: 250px;
-            background: var(--secondary);
-            top: 50%;
-            left: 50%;
-            animation-delay: -2.5s;
-        }
+      .orb-2 {
+        width: 300px;
+        height: 300px;
+        background: var(--accent);
+        bottom: -100px;
+        right: -100px;
+        animation-delay: -5s;
+      }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 20px); }
-        }
+      .orb-3 {
+        width: 250px;
+        height: 250px;
+        background: var(--secondary);
+        top: 50%;
+        left: 50%;
+        animation-delay: -2.5s;
+      }
 
-        /* Top Links */
-        .top-links {
-            position: fixed;
-            top: 1rem;
-            right: 2rem;
-            display: flex;
-            gap: 2rem;
-            z-index: 100;
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0);
         }
-
-        .top-links a {
-            color: var(--gray);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+        50% {
+          transform: translate(30px, 20px);
         }
+      }
 
-        .top-links a:hover {
-            color: var(--primary);
-        }
+      /* Top Links */
+      .top-links {
+        position: fixed;
+        top: 1rem;
+        right: 2rem;
+        display: flex;
+        gap: 2rem;
+        z-index: 100;
+      }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 2rem;
-            padding-top: 4rem;
-            text-align: center;
-        }
+      .top-links a {
+        color: var(--gray);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
 
-        .hero-content {
-            max-width: 800px;
-        }
+      .top-links a:hover {
+        color: var(--primary);
+      }
 
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        padding-top: 4rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        background: linear-gradient(to right, var(--primary), var(--primary-dark));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--gray);
+        margin-bottom: 2rem;
+        font-weight: 400;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .secondary-button {
+        background: transparent;
+        color: var(--primary);
+        padding: 0.5rem 1.5rem;
+        border: 2px solid var(--primary);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .secondary-button:hover {
+        background: var(--primary);
+        color: var(--white);
+      }
+
+      /* Dashboard Preview */
+      .dashboard-preview {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 2rem;
+      }
+
+      .dashboard-container {
+        background: var(--white);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+      }
+
+      .dashboard-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+
+      .dashboard-title {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: var(--dark);
+      }
+
+      .dashboard-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .stat-card {
+        background: var(--light-gray);
+        padding: 1.5rem;
+        border-radius: 12px;
+        border: 1px solid var(--glass-border);
+        transition: all 0.3s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+      }
+
+      .stat-label {
+        color: var(--gray);
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-value {
+        font-size: 1.75rem;
+        font-weight: 600;
+        color: var(--primary);
+      }
+
+      .code-preview {
+        background: var(--dark);
+        border-radius: 12px;
+        padding: 1.5rem;
+        font-family: "Monaco", monospace;
+        font-size: 0.875rem;
+        color: var(--light-gray);
+        overflow-x: auto;
+      }
+
+      .code-line {
+        margin-bottom: 0.5rem;
+      }
+
+      .code-keyword {
+        color: var(--primary-light);
+      }
+      .code-string {
+        color: var(--accent);
+      }
+      .code-function {
+        color: var(--secondary);
+      }
+
+      /* Partners Section */
+      .partners {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 2rem;
+      }
+
+      .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .partner-card {
+        background: var(--white);
+        border: 1px solid var(--glass-border);
+        border-radius: 12px;
+        padding: 2rem;
+        transition: all 0.3s ease;
+        box-shadow: var(--shadow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 150px;
+      }
+
+      .partner-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary);
+      }
+
+      .partner-logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--gray);
+      }
+
+      /* About Section */
+      .about {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem 2rem;
+      }
+
+      .about-container {
+        background: var(--white);
+        border: 1px solid var(--glass-border);
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: var(--shadow);
+        text-align: center;
+      }
+
+      .about h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 1rem;
+      }
+
+      .about p {
+        color: var(--gray);
+        font-size: 1rem;
+        line-height: 1.8;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, var(--primary), var(--primary-dark));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+          font-size: 3rem;
         }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 2rem;
-            font-weight: 400;
+        .nav-links {
+          display: none;
         }
 
         .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .secondary-button {
-            background: transparent;
-            color: var(--primary);
-            padding: 0.5rem 1.5rem;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .secondary-button:hover {
-            background: var(--primary);
-            color: var(--white);
-        }
-
-        /* Dashboard Preview */
-        .dashboard-preview {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
-
-        .dashboard-container {
-            background: var(--white);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
+          flex-direction: column;
         }
 
         .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
         }
-
-        .dashboard-title {
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--dark);
-        }
-
-        .dashboard-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .stat-card {
-            background: var(--light-gray);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-            transition: all 0.3s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-        }
-
-        .stat-label {
-            color: var(--gray);
-            font-size: 0.875rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-value {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-
-        .code-preview {
-            background: var(--dark);
-            border-radius: 12px;
-            padding: 1.5rem;
-            font-family: 'Monaco', monospace;
-            font-size: 0.875rem;
-            color: var(--light-gray);
-            overflow-x: auto;
-        }
-
-        .code-line {
-            margin-bottom: 0.5rem;
-        }
-
-        .code-keyword { color: var(--primary-light); }
-        .code-string { color: var(--accent); }
-        .code-function { color: var(--secondary); }
-
-        /* Partners Section */
-        .partners {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
-
-        .partners-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .partner-card {
-            background: var(--white);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 150px;
-        }
-
-        .partner-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-
-        .partner-logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--gray);
-        }
-
-        /* About Section */
-        .about {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 2rem;
-        }
-
-        .about-container {
-            background: var(--white);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 1rem;
-        }
-
-        .about p {
-            color: var(--gray);
-            font-size: 1rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-            }
-            
-            .dashboard-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="background"></div>
     <div class="gradient-orb orb-1"></div>
     <div class="gradient-orb orb-2"></div>
     <div class="gradient-orb orb-3"></div>
 
     <div class="top-links">
-        <a href="#community">Community</a>
-        <a href="#meetups">Meetups</a>
-        <a href="#submit">Submit</a>
-        <a href="#about">About</a>
+      <a href="#community">Community</a>
+      <a href="#meetups">Meetups</a>
+      <a href="#submit">Submit</a>
+      <a href="#about">About</a>
     </div>
 
     <section class="hero">
-        <div class="hero-content">
-            <h1>vibe coding meetups</h1>
-            <p>A modern development environment that enhances your coding experience with intelligent tools and beautiful interfaces.</p>
-            <div class="hero-buttons" id="community">
-                <a href="#" class="secondary-button">Join Community</a>
-            </div>
+      <div class="hero-content">
+        <h1>vibe coding event</h1>
+        <p>
+          A modern development environment that enhances your coding experience with intelligent
+          tools and beautiful interfaces.
+        </p>
+        <div class="hero-buttons" id="community">
+          <a href="#" class="secondary-button">Join Community</a>
         </div>
+      </div>
     </section>
 
     <section class="dashboard-preview" id="meetups">
-        <div class="dashboard-container">
-            <div class="dashboard-header">
-                <h2 class="dashboard-title">Upcoming Vibe Coding Meetups</h2>
-            </div>
-            
-            <div class="code-preview">
-                <div class="code-line">// Upcoming Meetups</div>
-                <div class="code-line">&nbsp;</div>
-                <div class="code-line"><span class="code-keyword">const</span> meetups = [</div>
-                <div class="code-line">  {</div>
-                <div class="code-line">    title: <span class="code-string">"AI & Code Generation Workshop"</span>,</div>
-                <div class="code-line">    date: <span class="code-string">"May 15, 2025"</span>,</div>
-                <div class="code-line">    description: <span class="code-string">"Join us for an interactive workshop exploring the latest AI tools for code generation. Learn how to leverage Claude, GPT-4, and other models to accelerate your development workflow."</span>,</div>
-                <div class="code-line">    link: <span class="code-string">"<a href="#" style="color: var(--accent); text-decoration: none;">(view)</a>"</span></div>
-                <div class="code-line">  },</div>
-                <div class="code-line">  {</div>
-                <div class="code-line">    title: <span class="code-string">"Building Full-Stack Apps with Convex"</span>,</div>
-                <div class="code-line">    date: <span class="code-string">"May 22, 2025"</span>,</div>
-                <div class="code-line">    description: <span class="code-string">"Deep dive into Convex.dev and learn how to build reactive full-stack applications. We'll create a real-time collaborative coding environment from scratch."</span>,</div>
-                <div class="code-line">    link: <span class="code-string">"<a href="#" style="color: var(--accent); text-decoration: none;">(view)</a>"</span></div>
-                <div class="code-line">  },</div>
-                <div class="code-line">  {</div>
-                <div class="code-line">    title: <span class="code-string">"Vibe Coding Design Systems"</span>,</div>
-                <div class="code-line">    date: <span class="code-string">"May 29, 2025"</span>,</div>
-                <div class="code-line">    description: <span class="code-string">"Explore modern design systems and component libraries. Learn how to create beautiful, accessible interfaces with Tailwind, Radix UI, and custom theming."</span>,</div>
-                <div class="code-line">    link: <span class="code-string">"<a href="#" style="color: var(--accent); text-decoration: none;">(view)</a>"</span></div>
-                <div class="code-line">  }</div>
-                <div class="code-line">];</div>
-            </div>
+      <div class="dashboard-container">
+        <div class="dashboard-header">
+          <h2 class="dashboard-title">Upcoming Vibe Coding Meetups</h2>
         </div>
+
+        <div class="code-preview">
+          <div class="code-line">// Upcoming Meetups</div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="code-keyword">const</span> meetups = [</div>
+          <div class="code-line">{</div>
+          <div class="code-line">
+            title: <span class="code-string">"AI & Code Generation Workshop"</span>,
+          </div>
+          <div class="code-line">date: <span class="code-string">"May 15, 2025"</span>,</div>
+          <div class="code-line">
+            description:
+            <span class="code-string"
+              >"Join us for an interactive workshop exploring the latest AI tools for code
+              generation. Learn how to leverage Claude, GPT-4, and other models to accelerate your
+              development workflow."</span
+            >,
+          </div>
+          <div class="code-line">
+            link:
+            <span class="code-string"
+              >"<a href="#" style="color: var(--accent); text-decoration: none">(view)</a>"</span
+            >
+          </div>
+          <div class="code-line">},</div>
+          <div class="code-line">{</div>
+          <div class="code-line">
+            title: <span class="code-string">"Building Full-Stack Apps with Convex"</span>,
+          </div>
+          <div class="code-line">date: <span class="code-string">"May 22, 2025"</span>,</div>
+          <div class="code-line">
+            description:
+            <span class="code-string"
+              >"Deep dive into Convex.dev and learn how to build reactive full-stack applications.
+              We'll create a real-time collaborative coding environment from scratch."</span
+            >,
+          </div>
+          <div class="code-line">
+            link:
+            <span class="code-string"
+              >"<a href="#" style="color: var(--accent); text-decoration: none">(view)</a>"</span
+            >
+          </div>
+          <div class="code-line">},</div>
+          <div class="code-line">{</div>
+          <div class="code-line">
+            title: <span class="code-string">"Vibe Coding Design Systems"</span>,
+          </div>
+          <div class="code-line">date: <span class="code-string">"May 29, 2025"</span>,</div>
+          <div class="code-line">
+            description:
+            <span class="code-string"
+              >"Explore modern design systems and component libraries. Learn how to create
+              beautiful, accessible interfaces with Tailwind, Radix UI, and custom theming."</span
+            >,
+          </div>
+          <div class="code-line">
+            link:
+            <span class="code-string"
+              >"<a href="#" style="color: var(--accent); text-decoration: none">(view)</a>"</span
+            >
+          </div>
+          <div class="code-line">}</div>
+          <div class="code-line">];</div>
+        </div>
+      </div>
     </section>
 
     <section class="partners" id="partners">
-        <h2 style="font-size: 1.5rem; font-weight: 400; color: var(--dark); text-align: center; margin-bottom: 2rem;">Partners</h2>
-        <div class="partners-grid">
-            <div class="partner-card">
-                <div class="partner-logo">Partner 1</div>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo">Partner 2</div>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo">Partner 3</div>
-            </div>
+      <h2
+        style="
+          font-size: 1.5rem;
+          font-weight: 400;
+          color: var(--dark);
+          text-align: center;
+          margin-bottom: 2rem;
+        ">
+        Partners
+      </h2>
+      <div class="partners-grid">
+        <div class="partner-card">
+          <div class="partner-logo">Partner 1</div>
         </div>
+        <div class="partner-card">
+          <div class="partner-logo">Partner 2</div>
+        </div>
+        <div class="partner-card">
+          <div class="partner-logo">Partner 3</div>
+        </div>
+      </div>
     </section>
 
     <section class="about" id="about">
-        <div class="about-container">
-            <h2>About Vibe Coding</h2>
-            <p>Vibe Coding is a community of developers, designers, and tech enthusiasts who believe in creating beautiful, functional, and human-centered code. We host regular meetups where developers can share knowledge, collaborate on projects, and connect with like-minded individuals. Our mission is to foster a supportive environment where creativity meets technology, and where every line of code tells a story. Join us to experience coding in a whole new light.</p>
-        </div>
+      <div class="about-container">
+        <h2>About Vibe Coding</h2>
+        <p>
+          Vibe Coding is a community of developers, designers, and tech enthusiasts who believe in
+          creating beautiful, functional, and human-centered code. We host regular meetups where
+          developers can share knowledge, collaborate on projects, and connect with like-minded
+          individuals. Our mission is to foster a supportive environment where creativity meets
+          technology, and where every line of code tells a story. Join us to experience coding in a
+          whole new light.
+        </p>
+      </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 VibeCoding. All rights reserved.</p>
+      <p>&copy; 2025 VibeCoding. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
