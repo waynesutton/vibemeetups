@@ -1,39 +1,60 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Meetups from "./components/Meetups";
 import Partners from "./components/Partners";
 import About from "./components/About";
 import Footer from "./components/Footer";
+import SubmitPage from "./pages/SubmitPage"; // Placeholder for SubmitPage
+import AdminPage from "./pages/AdminPage"; // Placeholder for AdminPage
 import "./App.css"; // Import global styles
 
-const App: React.FC = () => {
+function HomePage() {
   return (
     <>
-      {/* Background Elements */}
+      {/* Background elements moved to App component */}
+      <Hero />
+      <Meetups />
+      <Partners />
+      <About />
+    </>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
+  return (
+    <div className="app-container">
+      {/* Render Header on all pages */}
+      <Header />
+
+      {/* Background Elements - Render on all pages */}
       <div className="background"></div>
       <div className="gradient-orb orb-1"></div>
       <div className="gradient-orb orb-2"></div>
       <div className="gradient-orb orb-3"></div>
 
-      {/* New Header Structure */}
-      <header className="app-header">
-        <div className="header-title">
-          <a href="/">Vibe Coding Meetups</a>
-        </div>
-        <Header /> {/* Renders the right-aligned links */}
-      </header>
-
-      {/* Page Components */}
       <main>
-        <Hero />
-        <Meetups />
-        <Partners />
-        <About />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/submit" element={<SubmitPage />} />
+          <Route path="/admin" element={<AdminPage />} />
+        </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
-};
+}
+
+function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
+  );
+}
 
 export default App;

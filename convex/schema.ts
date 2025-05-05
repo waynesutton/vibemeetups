@@ -14,7 +14,8 @@ export default defineSchema({
     status: v.union(
       v.literal("pending"), // Submitted, needs review
       v.literal("approved"), // Visible on the site
-      v.literal("rejected") // Submitted but rejected
+      v.literal("rejected"), // Submitted but rejected
+      v.literal("hidden") // Manually hidden by admin
     ),
     isVisible: v.boolean(), // Controls direct visibility, admin can toggle
     // Optional fields for submitted events

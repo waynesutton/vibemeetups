@@ -107,62 +107,58 @@ a:hover {
   }
 }
 
-/* Header Container */
+/* Header Styles */
 .app-header {
-  position: fixed; /* Keep header fixed */
-  top: 0;
-  left: 0;
-  width: 100%;
+  /* Apply flexbox for alignment */
   display: flex;
-  justify-content: space-between; /* Space out title and links */
+  justify-content: space-between; /* Pushes title left, nav right */
   align-items: center;
-  padding: 1rem 2rem; /* Consistent padding */
-  z-index: 100;
-  pointer-events: none; /* Allow clicks to pass through container */
+  padding: 1rem 2rem; /* Keep some padding */
 }
 
 .header-title a {
-  text-decoration: none;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
   font-size: 1.1rem;
-  pointer-events: auto; /* Enable clicks on title */
+  color: var(--primary); /* Apply color #C96342 */
+  text-decoration: none;
 }
 
 .header-title a:hover {
-  color: var(--primary);
+  color: var(--primary-dark); /* Keep original hover */
 }
 
-/* Top Links (Header Component) */
-.top-links {
-  /* position: fixed; */ /* Position now handled by app-header */
-  /* top: 1rem; */
-  /* right: 2rem; */
-  display: flex;
-  gap: 2rem;
-  /* z-index: 100; */
-  pointer-events: auto; /* Enable clicks on links */
+.header-nav {
+  /* Restore original layout - likely just needed gap */
+  display: flex; /* Keep flex if nav links were horizontal */
+  gap: 1.5rem; /* Adjust gap as needed */
+  align-items: center; /* Vertically align nav items */
 }
 
-.top-links a {
+.header-nav .nav-link {
+  color: var(--primary); /* Apply color #C96342 */
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 500; /* Original weight */
+  transition: color 0.3s ease;
 }
 
-.top-links a:hover {
-  color: var(--primary);
+.header-nav .nav-link:hover {
+  color: var(--primary-dark); /* Darker hover for primary color */
 }
 
-/* Hero Section */
+/* Restore original main padding/remove added padding */
+main {
+  padding-top: 0; /* Remove padding added for sticky header */
+}
+
+/* Restore Hero styles */
 .hero {
-  /* min-height: 100vh; */ /* Removed fixed viewport height */
-  padding-top: 6rem; /* Adjust top padding to account for fixed header */
-  padding-bottom: 4rem; /* Reduce bottom padding */
+  padding-top: 6rem; /* Original padding */
+  padding-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  text-align: center;
+  text-align: center; /* Ensure content is centered */
 }
 
 .hero-content {
@@ -206,6 +202,124 @@ a:hover {
 .secondary-button:hover {
   background: var(--primary);
   color: var(--white);
+}
+
+/* Add styles for Submit and Admin pages if needed */
+.page-container {
+  /* Basic container styling */
+  padding: 2rem;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-container,
+.admin-section {
+  max-width: 700px; /* Limit form/section width */
+  margin: 2rem auto; /* Center the container */
+  padding: 2rem;
+  background-color: #fff; /* White background */
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="url"],
+.form-group input[type="email"],
+.form-group input[type="datetime-local"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #555; /* Darker hover */
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background-color: #e0e0e0; /* Light background for message */
+  text-align: center;
+}
+
+/* Basic Admin Table Styles */
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.admin-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.admin-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.admin-table button {
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem; /* Spacing for wrapped buttons */
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.admin-table button:hover {
+  background-color: #eee;
 }
 
 /* Dashboard Preview (Meetups Component) */
