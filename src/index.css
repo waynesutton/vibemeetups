@@ -12,29 +12,34 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Close Button - Styled similar to a potential community button */
+/* Close Button - Styled like .secondary-button */
 .contact-form-close-button {
   position: absolute;
-  top: 15px; /* Adjusted positioning */
+  top: 15px;
   right: 15px;
-  background-color: #000; /* Black background */
-  color: #fff; /* White text */
-  border: none;
-  border-radius: 6px; /* Slightly rounded corners */
-  font-size: 1rem; /* Adjusted font size */
+  /* Styles from .secondary-button */
+  background: transparent;
+  color: var(--primary);
+  padding: 0.5rem 0.8rem; /* Adjusted padding for 'X' size */
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  /* Specifics for 'X' button */
+  font-size: 1.2rem;
   cursor: pointer;
-  width: 30px; /* Fixed size */
-  height: 30px;
-  display: flex;
+  width: auto; /* Auto width */
+  height: auto; /* Auto height */
+  display: inline-flex; /* Use inline-flex */
   align-items: center;
   justify-content: center;
   line-height: 1;
-  padding: 0;
-  transition: background-color 0.3s ease;
 }
 
 .contact-form-close-button:hover {
-  background-color: #333; /* Darker grey on hover */
+  /* Hover styles from .secondary-button */
+  background: var(--primary);
+  color: var(--white);
 }
 
 /* Contact Form Specific Styles */
@@ -69,30 +74,35 @@
   resize: vertical;
 }
 
-/* Submit Button - Styled similar to a potential community button */
+/* Submit Button - Styled like .secondary-button */
 .contact-form button[type="submit"] {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  /* background-color: #007bff;  Removed blue */
-  background-color: #000; /* Black background */
-  color: white;
-  border: none;
-  border-radius: 6px; /* Slightly rounded corners */
+  display: block; /* Keep as block for full width */
+  width: 100%; /* Keep full width */
+  /* Styles from .secondary-button */
+  background: transparent;
+  color: var(--primary);
+  padding: 0.5rem 1.5rem;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  /* Keep form specific styles */
   cursor: pointer;
   font-size: 1rem;
-  font-weight: bold; /* Added bold */
-  text-transform: uppercase; /* Added uppercase */
-  transition: background-color 0.3s ease;
+  /* text-transform: uppercase; */ /* Removing uppercase to match secondary-button */
 }
 
 .contact-form button[type="submit"]:hover {
-  /* background-color: #0056b3; Removed blue */
-  background-color: #333; /* Darker grey on hover */
+  /* Hover styles from .secondary-button */
+  background: var(--primary);
+  color: var(--white);
 }
 
 .contact-form button[type="submit"]:disabled {
   background-color: #ccc;
+  border-color: #ccc; /* Match border */
+  color: #666; /* Dim text color */
   cursor: not-allowed;
 }
 

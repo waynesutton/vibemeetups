@@ -64,6 +64,14 @@ const Meetups: React.FC = () => {
                 <option value="date">Date</option>
                 <option value="location">Location</option>
               </select>
+              {/* Add Luma Calendar Link Here */}
+              <a
+                href="https://lu.ma/vibe-coding"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: "1rem", fontSize: "0.9rem", textDecoration: "none" }}>
+                Subscribe to calendar
+              </a>
             </div>
           </div>
           <div className="meetups-list">Loading meetups...</div>
@@ -90,6 +98,14 @@ const Meetups: React.FC = () => {
                 <option value="date">Date</option>
                 <option value="location">Location</option>
               </select>
+              {/* Add Luma Calendar Link Here */}
+              <a
+                href="https://lu.ma/vibe-coding"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ marginLeft: "1rem", fontSize: "0.9rem", textDecoration: "none" }}>
+                Subscribe to calendar
+              </a>
             </div>
           </div>
           <div className="meetups-list">No upcoming meetups scheduled yet.</div>
@@ -114,6 +130,14 @@ const Meetups: React.FC = () => {
               <option value="date">Date</option>
               <option value="location">Location</option>
             </select>
+            {/* Add Luma Calendar Link Here */}
+            <a
+              href="https://lu.ma/vibe-coding"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginLeft: "1rem", fontSize: "0.9rem", textDecoration: "none" }}>
+              Subscribe to calendar
+            </a>
           </div>
         </div>
 

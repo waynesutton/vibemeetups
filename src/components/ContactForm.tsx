@@ -2,7 +2,7 @@ import React from "react";
 
 // TODO: Replace "YOUR_ACCESS_KEY_HERE" with your actual Web3Forms Access Key.
 // It's recommended to store this in environment variables.
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE";
+const WEB3FORMS_ACCESS_KEY = "01efd4f1-68c0-4e4b-8874-89b9e49359cc";
 
 export default function ContactForm({ onClose }: { onClose: () => void }) {
   const [result, setResult] = React.useState("");
@@ -76,7 +76,7 @@ export default function ContactForm({ onClose }: { onClose: () => void }) {
         </div>
 
         <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Submit Form"}
+          {isSubmitting ? "Sending..." : "Submit"}
         </button>
       </form>
       {result && <span className="form-result">{result}</span>}

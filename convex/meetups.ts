@@ -8,6 +8,7 @@ export const listApprovedMeetups = query({
   args: {}, // No arguments needed for the public list
   handler: async (ctx) => {
     // Fetch meetups that are approved, visible, and sort by dateTime ascending
+    // subscribe to calendar: https://lu.ma/vibe-coding
     const meetups = await ctx.db
       .query("meetups")
       .withIndex("by_status_and_dateTime", (q) => q.eq("status", "approved").eq("isVisible", true))
