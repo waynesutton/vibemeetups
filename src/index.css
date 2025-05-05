@@ -1,0 +1,104 @@
+/* Removed .modal-overlay styles */
+
+/* Adapted styles for inline contact form section */
+.contact-form-section {
+  background-color: #fff; /* Keep white background */
+  padding: 30px;
+  border-radius: 8px;
+  position: relative; /* For positioning the close button */
+  max-width: 960px; /* Example max-width, adjust to match your site's container */
+  width: 90%; /* Responsive width */
+  margin: 30px auto; /* Center the section with margin top/bottom */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button - Styled similar to a potential community button */
+.contact-form-close-button {
+  position: absolute;
+  top: 15px; /* Adjusted positioning */
+  right: 15px;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  border: none;
+  border-radius: 6px; /* Slightly rounded corners */
+  font-size: 1rem; /* Adjusted font size */
+  cursor: pointer;
+  width: 30px; /* Fixed size */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form-close-button:hover {
+  background-color: #333; /* Darker grey on hover */
+}
+
+/* Contact Form Specific Styles */
+.contact-form-container h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Submit Button - Styled similar to a potential community button */
+.contact-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  /* background-color: #007bff;  Removed blue */
+  background-color: #000; /* Black background */
+  color: white;
+  border: none;
+  border-radius: 6px; /* Slightly rounded corners */
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold; /* Added bold */
+  text-transform: uppercase; /* Added uppercase */
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+  /* background-color: #0056b3; Removed blue */
+  background-color: #333; /* Darker grey on hover */
+}
+
+.contact-form button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-result {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}

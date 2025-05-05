@@ -26,10 +26,11 @@
 
 body {
   font-family: "Inter", sans-serif;
-  background: var(--background);
+  background: var(--background-gradient); /* Apply gradient to body */
   color: var(--dark);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh; /* Ensure body covers full viewport height */
 }
 
 /* Headings */
@@ -52,68 +53,63 @@ a:hover {
   color: var(--primary-dark); /* Slightly darker on hover */
 }
 
-/* Background gradient */
-.background {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: var(--background-gradient);
-  z-index: -2;
-}
-
-/* Animated gradient orbs */
+/* Adjust gradient orbs */
 .gradient-orb {
-  position: fixed;
+  /* position: fixed; Remove fixed positioning */
+  position: absolute; /* Position relative to body/container */
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
-  z-index: -1;
-  animation: float 10s ease-in-out infinite;
+  filter: blur(100px); /* Increased blur */
+  opacity: 0.2; /* Slightly adjusted opacity */
+  z-index: -1; /* Keep behind content */
+  pointer-events: none; /* Orbs shouldn't interfere with clicks */
+  animation: float 15s ease-in-out infinite alternate; /* Adjust animation */
 }
 
+/* Adjust orb positioning relative to the page */
 .orb-1 {
-  width: 400px;
-  height: 400px;
+  width: 500px; /* Slightly larger */
+  height: 500px;
   background: var(--primary);
-  top: -100px;
-  left: -100px;
+  top: -150px; /* Adjust position */
+  left: -150px;
 }
 
 .orb-2 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background: var(--accent);
-  bottom: -100px;
-  right: -100px;
-  animation-delay: -5s;
+  bottom: -150px;
+  right: -150px;
+  animation-delay: -7s;
 }
 
 .orb-3 {
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   background: var(--secondary);
-  top: 50%;
+  top: 40%; /* Adjust position */
   left: 50%;
-  animation-delay: -2.5s;
+  transform: translateX(-50%); /* Center horizontally */
+  animation-delay: -3.5s;
 }
 
 @keyframes float {
-  0%,
-  100% {
-    transform: translate(0, 0);
+  0% {
+    transform: translate(0, 0) scale(1);
   }
-  50% {
-    transform: translate(30px, 20px);
+  100% {
+    transform: translate(40px, 30px) scale(1.1); /* Add slight scale */
   }
 }
 
 /* Header Styles */
 .app-header {
-  /* Apply flexbox for alignment */
   display: flex;
-  justify-content: space-between; /* Pushes title left, nav right */
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem; /* Keep some padding */
+  padding: 1rem 2rem;
+  flex-wrap: wrap; /* Allow header content to wrap */
+  gap: 1rem; /* Add gap for wrapped items */
 }
 
 .header-title a {
@@ -129,10 +125,10 @@ a:hover {
 }
 
 .header-nav {
-  /* Restore original layout - likely just needed gap */
-  display: flex; /* Keep flex if nav links were horizontal */
-  gap: 1.5rem; /* Adjust gap as needed */
-  align-items: center; /* Vertically align nav items */
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap; /* Allow nav links themselves to wrap if needed */
 }
 
 .header-nav .nav-link {
@@ -240,13 +236,16 @@ main {
 .form-group input[type="url"],
 .form-group input[type="email"],
 .form-group input[type="datetime-local"],
-.form-group textarea {
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 1rem;
+  font-family: "Inter", sans-serif;
 }
 
 .form-group textarea {
@@ -277,10 +276,11 @@ main {
 }
 
 .submit-message {
-  margin-top: 1rem;
+  margin: 10px; /* Add 10px margin all around */
   padding: 0.75rem;
   border-radius: 4px;
-  background-color: #e0e0e0; /* Light background for message */
+  background-color: #42c977; /* Apply requested background color */
+  color: #ffffff; /* Set text color to white */
   text-align: center;
 }
 
@@ -289,12 +289,13 @@ main {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  font-size: 0.9rem;
 }
 
 .admin-table th,
 .admin-table td {
   border: 1px solid #ddd;
-  padding: 0.75rem;
+  padding: 0.5rem;
   text-align: left;
 }
 
@@ -308,50 +309,82 @@ main {
 }
 
 .admin-table button {
-  padding: 0.3rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   margin-right: 0.3rem;
-  margin-bottom: 0.3rem; /* Spacing for wrapped buttons */
+  margin-bottom: 0.3rem;
   border: 1px solid #ccc;
   background-color: #fff;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .admin-table button:hover {
   background-color: #eee;
 }
 
+/* Make table scrollable on small screens */
+.manage-meetups {
+  /* overflow-x: auto; */ /* Apply scroll to the container */
+  /* Consider applying this directly to table or a wrapper div if needed */
+}
+
+/* Optional: Add a wrapper for the table for better scroll styling */
+.admin-table-wrapper {
+  overflow-x: auto;
+  width: 100%;
+}
+
 /* Dashboard Preview (Meetups Component) */
 .meetups-section {
-  /* Renamed from .dashboard-preview */
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 2rem;
 }
 
 .meetups-container {
-  /* Renamed from .dashboard-container */
   background: var(--white);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   padding: 2rem;
-  /* box-shadow: var(--shadow); */
 }
 
 .meetups-header {
-  /* Renamed from .dashboard-header */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem; /* Reduced margin */
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 1rem; /* Add gap for wrapped items */
 }
 
 .meetups-title {
-  /* Renamed from .dashboard-title */
   font-size: 1.5rem;
   font-weight: 400;
   color: var(--dark);
+  margin: 0; /* Remove default margin */
+}
+
+/* Sort Dropdown Styles */
+.sort-dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-dropdown-container label {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.sort-dropdown {
+  padding: 0.3rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 /* Removed .dashboard-stats and .stat-card styles as they are not used */
@@ -523,10 +556,40 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Reduce hero title size */
   }
 
-  /* .nav-links adjustment handled in Header component if needed */
+  .app-header {
+    padding: 1rem; /* Reduce header padding */
+    justify-content: center; /* Center items when wrapped */
+  }
+
+  .meetups-section,
+  .partners,
+  .about {
+    padding: 1.5rem 1rem; /* Reduce section padding */
+  }
+
+  .meetups-container,
+  .about-container,
+  .partner-card {
+    padding: 1.5rem; /* Reduce container padding */
+  }
+
+  .meetup-item {
+    flex-direction: column; /* Stack meetup content and button */
+    align-items: flex-start; /* Align button left */
+  }
+
+  .meetup-content {
+    margin-right: 0;
+    margin-bottom: 1rem; /* Add space below content when stacked */
+  }
+
+  /* Ensure admin table scrolls nicely */
+  .manage-meetups {
+    overflow-x: auto; /* Apply scroll to the container */
+  }
 
   .hero-buttons {
     flex-direction: column;
@@ -536,5 +599,52 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
+  }
+}
+
+/* Further adjustments for very small screens if needed */
+@media (max-width: 480px) {
+  .header-nav {
+    justify-content: center; /* Center nav links */
+    gap: 1rem;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Styles for Admin Page Layout */
+.admin-layout-container {
+  display: flex;
+  flex-direction: row; /* Default to side-by-side */
+  gap: 2rem; /* Space between columns */
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Adjustments for the sections within the flex container */
+.admin-layout-container .admin-section {
+  flex: 1 1 0px; /* Allow sections to grow and shrink, basis 0 */
+  /* max-width is already set, which might prevent equal width. Remove if needed */
+  /* Or set a specific width like flex-basis: 50%; */
+  margin: 0; /* Remove auto margin used for centering previously */
+}
+
+/* Responsive stacking for smaller screens */
+@media (max-width: 900px) {
+  /* Adjust breakpoint as needed */
+  .admin-layout-container {
+    flex-direction: column; /* Stack vertically */
+  }
+  /* Reset margin for stacked layout if needed */
+  .admin-layout-container .admin-section {
+    margin-bottom: 2rem; /* Add space between stacked items */
+    /* Ensure sections take full width if needed */
+    /* max-width: none; */
+  }
+  .admin-layout-container .admin-section:last-child {
+    margin-bottom: 0; /* Remove margin from last item */
   }
 }

@@ -31,8 +31,7 @@ function AppContent() {
       {/* Render Header on all pages */}
       <Header />
 
-      {/* Background Elements - Render on all pages */}
-      <div className="background"></div>
+      {/* Gradient Orbs - Now positioned relative to body */}
       <div className="gradient-orb orb-1"></div>
       <div className="gradient-orb orb-2"></div>
       <div className="gradient-orb orb-3"></div>

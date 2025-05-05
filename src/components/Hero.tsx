@@ -6,8 +6,9 @@ const Hero: React.FC = () => {
       <div className="hero-content">
         <h1>Vibe, Meet, Ship</h1>
         <p>
-          Join the Discord to connect with other vibe coders, trade prompts, drop your favorite
-          tools, and connect with fellow vibe coders in your city.
+          Join the Discord to trade prompts, share your favorite tools and tips, and find local
+          meetups with people who code like you. Whether you’re working on AI apps, full-stack
+          experiments, or weekend builds, this is where real-time creativity meets community.
         </p>
         <div className="hero-buttons">
           {/* Link directly to Discord */}
