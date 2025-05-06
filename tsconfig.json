@@ -19,9 +19,14 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
 
-    /* Add Vite client types */
-    "types": ["vite/client"]
+    /* Paths and Types */
+    "baseUrl": ".",
+    "paths": {
+      // Add any specific path aliases here if you use them
+      // e.g., "@/*": ["src/*"]
+    },
+    "types": ["node"]
   },
-  "include": ["src"],
+  "include": ["src", "convex"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
