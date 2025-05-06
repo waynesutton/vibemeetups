@@ -1,5 +1,5 @@
 // import React from "react"; // Removed unused import
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Meetups from "./components/Meetups";
