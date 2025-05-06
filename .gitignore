@@ -123,4 +123,10 @@ dist
 dist
 
 # Task List
-TASKS.md 
+TASKS.md
+
+# Gitmaid and instruction files
+dont.md
+gitmaid.md
+gitmaidsetup.md
+gitmaid.html 
