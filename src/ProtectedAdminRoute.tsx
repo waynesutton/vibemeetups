@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AdminLoginPage from "./AdminLoginPage.jsx"; // Import the login page
+import AdminLoginPage from "./AdminLoginPage.tsx"; // Changed from .jsx to .tsx
 import AdminPage from "./pages/AdminPage"; // Import your actual admin page
 
 const ProtectedAdminRoute: React.FC = () => {

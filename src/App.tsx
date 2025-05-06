@@ -24,7 +24,7 @@ function HomePage() {
 
 function AppContent() {
   const location = useLocation();
-  const isHomePage = location.pathname === "/";
+  // const isHomePage = location.pathname === "/"; // Unused variable
 
   return (
     <div className="app-container">

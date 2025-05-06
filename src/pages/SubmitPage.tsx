@@ -1,8 +1,8 @@
 import React, { useState, FormEvent } from "react";
 import { useMutation } from "convex/react";
 import { api } from "../../convex/_generated/api";
-import Header from "../components/Header"; // Adjust path as needed
-import Footer from "../components/Footer"; // Adjust path as needed
+// import Header from "../components/Header"; // Adjust path as needed - Unused
+// import Footer from "../components/Footer"; // Adjust path as needed - Unused
 
 const SubmitPage: React.FC = () => {
   const submitMeetup = useMutation(api.meetups.submitMeetup);

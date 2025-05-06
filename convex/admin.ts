@@ -1,13 +1,16 @@
-import { mutation } from "./_generated/server";
+"use node";
+import { mutation, MutationCtx } from "./_generated/server";
 import { v } from "convex/values";
 // This import is incorrect and unnecessary for backend code
 // import ProtectedAdminRoute from "./ProtectedAdminRoute"; // Adjust path if necessary
 
+const verifyAdminAccessArgs = { password: v.string() };
+
 // Mutation to verify the provided password against the stored secret
 export const verifyAdminAccess = mutation({
-  args: { password: v.string() }, // Expects a string argument named 'password'
+  args: verifyAdminAccessArgs,
   returns: v.boolean(), // Returns true if the password is correct, false otherwise
-  handler: async (ctx, args) => {
+  handler: async (ctx: MutationCtx, args: typeof verifyAdminAccessArgs) => {
     // Retrieve the secret from environment variables
     const adminSecret = process.env.ADMIN_SECRET;
 
