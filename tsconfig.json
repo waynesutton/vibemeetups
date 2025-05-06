@@ -25,7 +25,7 @@
       // Add any specific path aliases here if you use them
       // e.g., "@/*": ["src/*"]
     },
-    "types": ["node"]
+    "types": ["node", "vite/client"]
   },
   "include": ["src", "convex"],
   "references": [{ "path": "./tsconfig.node.json" }]

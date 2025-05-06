@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react"; // Removed unused import
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -23,8 +23,8 @@ function HomePage() {
 }
 
 function AppContent() {
-  const location = useLocation();
-  // const isHomePage = location.pathname === "/"; // Unused variable
+  // const location = useLocation(); // Removed unused variable
+  // const isHomePage = location.pathname === "/"; // Already commented out/removed
 
   return (
     <div className="app-container">

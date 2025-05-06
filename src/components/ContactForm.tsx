@@ -20,7 +20,6 @@ export default function ContactForm({ onClose }: { onClose: () => void }) {
 
     // Basic spam check
     const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
     formData.append("from_name", "Vibe Coding Contact Form");
     formData.append("subject", "New Contact Form Submission from Vibe Coding");
     formData.append("replyto", object.email);

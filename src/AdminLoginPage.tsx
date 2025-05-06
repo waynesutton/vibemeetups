@@ -1,10 +1,14 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import { useMutation } from "convex/react";
 // Make sure this path matches your generated API file location
 import { api } from "../convex/_generated/api"; // Corrected path
 
-export default function AdminLoginPage({ onAuthenticate }) {
+// Define props interface
+interface AdminLoginPageProps {
+  onAuthenticate: () => void;
+}
+
+export default function AdminLoginPage({ onAuthenticate }: AdminLoginPageProps) {
   // State for the password input
   const [password, setPassword] = useState("");
   // State for displaying errors
@@ -16,7 +20,7 @@ export default function AdminLoginPage({ onAuthenticate }) {
   const verifyAdmin = useMutation(api.admin.verifyAdminAccess);
 
   // Handle form submission
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault(); // Prevent default form submission
     setIsLoading(true); // Show loading indicator
     setError(""); // Clear previous errors
