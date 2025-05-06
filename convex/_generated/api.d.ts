@@ -13,6 +13,7 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as admin from "../admin.js";
 import type * as meetups from "../meetups.js";
 
 /**
@@ -24,6 +25,7 @@ import type * as meetups from "../meetups.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  admin: typeof admin;
   meetups: typeof meetups;
 }>;
 export declare const api: FilterApi<

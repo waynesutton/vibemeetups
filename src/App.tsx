@@ -7,7 +7,7 @@ import Partners from "./components/Partners";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import SubmitPage from "./pages/SubmitPage"; // Placeholder for SubmitPage
-import AdminPage from "./pages/AdminPage"; // Placeholder for AdminPage
+import ProtectedAdminRoute from "./ProtectedAdminRoute"; // Import the wrapper
 import "./App.css"; // Import global styles
 
 function HomePage() {
@@ -40,7 +40,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/submit" element={<SubmitPage />} />
-          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/admin" element={<ProtectedAdminRoute />} />
         </Routes>
       </main>
       <Footer />
