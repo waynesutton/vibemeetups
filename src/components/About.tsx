@@ -4,14 +4,14 @@ const About: React.FC = () => {
   return (
     <section className="about" id="about">
       <div className="about-container">
-        <h2>About Vibe Coding</h2>
+        <h2>About Vibe Coding Meetups</h2>
         <p>
-          Vibe Coding is a community of developers, designers, and tech enthusiasts who believe in
-          creating beautiful, functional, and human-centered code. We host regular meetups where
-          developers can share knowledge, collaborate on projects, and connect with like-minded
-          individuals. Our mission is to foster a supportive environment where creativity meets
-          technology, and where every line of code tells a story. Join us to experience coding in a
-          whole new light.
+          Vibe Coders Meetups brings online builders offline. A global network of vibe coders and
+          developers sharing prompts, tools, and ideas—and meeting up to build together. Whether
+          you’re experimenting with AI, shipping full-stack apps, or coding on the side, this is
+          where real builders connect, learn, and ship. Site/Discord maintained by{" "}
+          <a href="https://www.convex.dev/?utm_source=vibe-coding-meetups">Convex</a>/
+          <a href="https://x.com/waynesutton">@waynesutton</a>
         </p>
       </div>
     </section>
