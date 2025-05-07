@@ -5,7 +5,7 @@ import { v } from "convex/values";
 
 export const verifyAdminAccess = mutation({
   args: { password: v.string() },
-  handler: async (ctx, args) => {
+  handler: async (_ctx, args) => {
     const adminSecret = process.env.ADMIN_SECRET;
     if (!adminSecret) {
       throw new Error(
