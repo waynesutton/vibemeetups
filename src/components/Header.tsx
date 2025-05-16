@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             Meetups
           </Link>
         )}
-        <Link to="/submit" className="nav-link">
+        <Link to="https://lu.ma/vibe-coding" className="nav-link">
           Submit
         </Link>
         <a
